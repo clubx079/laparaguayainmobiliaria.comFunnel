@@ -33,6 +33,7 @@ npm run local      # http://localhost:3055
 
 ```
 npm run check                                   # the built pages: links, UTM tags, form rule
+npm run check:sitemap                           # with npm run local running: sitemap, robots.txt, llms.txt (every URL 200)
 node scripts/check-content.mjs                  # the guides: language, links, structure
 python scripts/autocomplete.py py "frase"       # what people in this country type into Google
 ```
