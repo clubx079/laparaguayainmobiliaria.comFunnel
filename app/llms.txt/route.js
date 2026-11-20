@@ -6,6 +6,7 @@ import { cl } from '@/lib/utm';
 import { transparency } from '@/lib/editorial';
 
 export const dynamic = 'force-static';
+export const revalidate = 300; // AI SEO feed guides (lib/seoFeed.js) appear without a rebuild
 
 // /llms.txt in the llmstxt.org format, the same pattern as Casa-Libre's own llms.txt: H1 name, a one-paragraph
 // summary in a blockquote, plain details with bold labels (what this site is, the facts about Casa-Libre, the

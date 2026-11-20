@@ -5,6 +5,7 @@ import { INFO_SLUGS } from '@/lib/routes';
 import { alternatesFor, guiasAlternates } from '@/lib/alternates';
 
 export const dynamic = 'force-static';
+export const revalidate = 300; // AI SEO feed guides (lib/seoFeed.js) appear without a rebuild
 
 // Every public, indexable page of this site, on the production domain, once each:
 //   the home and every guide of every country, each country's /guias/ index and /glosario/ (where it has one),

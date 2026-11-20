@@ -254,6 +254,13 @@ export default function Article({ cc, page, guides }) {
           </section>
         ) : null}
 
+        {page.extraLinks?.length ? (
+          <section className="end more" id="mas-guias" aria-labelledby="mas-guias-h">
+            <h2 id="mas-guias-h">Más guías</h2>
+            <ul>{page.extraLinks.map((l) => <li key={l.href}><Link href={l.href}>{l.label}</Link></li>)}</ul>
+          </section>
+        ) : null}
+
         {sources.length ? (
           <section className="end sources" id="fuentes">
             <h2>Fuentes de esta guía</h2>

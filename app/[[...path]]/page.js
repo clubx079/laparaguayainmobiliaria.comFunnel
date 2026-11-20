@@ -9,8 +9,13 @@ import { SITE as site, siteUrl } from '@/lib/site';
 import { guideGraph, simpleGraph, JsonLd } from '@/lib/schema';
 import { alternatesFor, guiasAlternates } from '@/lib/alternates';
 
+// The static guides are built ahead (generateStaticParams). Guides from the AI SEO feed (lib/seoFeed.js) are not
+// known at build time: they render on demand, and resolve() answers 404 for anything that is neither a static page
+// nor a feed guide. Every page is regenerated at most every 5 minutes so feed overrides (titles, extra links) apply;
+// the feed never throws (static guides alone when it is down), so a regeneration cannot turn a page into an error.
 export const dynamic = 'force-static';
-export const dynamicParams = false; // only the pages that exist as content; anything else is a 404
+export const dynamicParams = true;
+export const revalidate = 300;
 export const generateStaticParams = () => allParams();
 
 export async function generateMetadata({ params }) {
